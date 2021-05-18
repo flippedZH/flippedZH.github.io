@@ -2,7 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-<<<<<<< HEAD
     <loc>http://www.example.com/bloglist/</loc>
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -25,18 +24,10 @@
                 rel="alternate"
                 hreflang="pt-br"
                 href="http://www.example.com/pt-br/"
-=======
-    <loc>http://www.example.com/authors/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="http://www.example.com/pt-br/authors/"
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-<<<<<<< HEAD
                 href="http://www.example.com/"
                 />
   </url><url>
@@ -45,12 +36,6 @@
   </url><url>
     <loc>http://www.example.com/categories/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-=======
-                href="http://www.example.com/authors/"
-                />
-  </url><url>
-    <loc>http://www.example.com/categories/</loc>
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -62,7 +47,6 @@
                 href="http://www.example.com/categories/"
                 />
   </url><url>
-<<<<<<< HEAD
     <loc>http://www.example.com/tags/css/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -108,29 +92,15 @@
                 rel="alternate"
                 hreflang="pt-br"
                 href="http://www.example.com/pt-br/bloglist/markdown-syntax/"
-=======
-    <loc>http://www.example.com/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="http://www.example.com/pt-br/"
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-<<<<<<< HEAD
                 href="http://www.example.com/bloglist/markdown-syntax/"
                 />
   </url><url>
     <loc>http://www.example.com/series/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-=======
-                href="http://www.example.com/"
-                />
-  </url><url>
-    <loc>http://www.example.com/series/</loc>
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -142,15 +112,11 @@
                 href="http://www.example.com/series/"
                 />
   </url><url>
-<<<<<<< HEAD
     <loc>http://www.example.com/categories/syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.example.com/tags/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-=======
-    <loc>http://www.example.com/tags/</loc>
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -161,7 +127,6 @@
                 hreflang="en"
                 href="http://www.example.com/tags/"
                 />
-<<<<<<< HEAD
   </url><url>
     <loc>http://www.example.com/categories/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
@@ -373,7 +338,5 @@
                 hreflang="en"
                 href="http://www.example.com/projects/"
                 />
-=======
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
   </url>
 </urlset>

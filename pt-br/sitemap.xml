@@ -2,36 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-<<<<<<< HEAD
     <loc>http://www.example.com/pt-br/bloglist/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
                 href="http://www.example.com/bloglist/"
-=======
-    <loc>http://www.example.com/pt-br/authors/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://www.example.com/authors/"
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-<<<<<<< HEAD
                 href="http://www.example.com/pt-br/bloglist/"
                 />
   </url><url>
     <loc>http://www.example.com/pt-br/categories/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-=======
-                href="http://www.example.com/pt-br/authors/"
-                />
-  </url><url>
-    <loc>http://www.example.com/pt-br/categories/</loc>
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -43,7 +28,6 @@
                 href="http://www.example.com/pt-br/categories/"
                 />
   </url><url>
-<<<<<<< HEAD
     <loc>http://www.example.com/pt-br/tags/css/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -88,9 +72,6 @@
   </url><url>
     <loc>http://www.example.com/pt-br/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-=======
-    <loc>http://www.example.com/pt-br/</loc>
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -102,7 +83,6 @@
                 href="http://www.example.com/pt-br/"
                 />
   </url><url>
-<<<<<<< HEAD
     <loc>http://www.example.com/pt-br/tags/markdown/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -118,9 +98,6 @@
   </url><url>
     <loc>http://www.example.com/pt-br/series/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-=======
-    <loc>http://www.example.com/pt-br/series/</loc>
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -132,15 +109,11 @@
                 href="http://www.example.com/pt-br/series/"
                 />
   </url><url>
-<<<<<<< HEAD
     <loc>http://www.example.com/pt-br/categories/sintaxe/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.example.com/pt-br/tags/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-=======
-    <loc>http://www.example.com/pt-br/tags/</loc>
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -151,7 +124,6 @@
                 hreflang="pt-br"
                 href="http://www.example.com/pt-br/tags/"
                 />
-<<<<<<< HEAD
   </url><url>
     <loc>http://www.example.com/pt-br/categories/temas/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
@@ -360,7 +332,5 @@
                 hreflang="pt-br"
                 href="http://www.example.com/pt-br/projects/"
                 />
-=======
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
   </url>
 </urlset>

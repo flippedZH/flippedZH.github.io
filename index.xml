@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-<<<<<<< HEAD
     <title>flipped</title>
     <link>http://www.example.com/</link>
     <description>Recent content on flipped</description>
@@ -112,12 +111,5 @@ Email: zouheng22@163.com</description>
       <description>Nothing to see here&amp;hellip; Move along!</description>
     </item>
     
-=======
-    <title>johndoe</title>
-    <link>http://www.example.com/</link>
-    <description>Recent content on johndoe</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="http://www.example.com/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
   </channel>
 </rss>

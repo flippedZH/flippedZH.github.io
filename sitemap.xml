@@ -4,21 +4,15 @@
   <sitemap>
     <loc>http://www.example.com/en/sitemap.xml</loc>
     
-<<<<<<< HEAD
       <lastmod>2021-05-18T00:00:00+00:00</lastmod>
     
-=======
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
   </sitemap>
   
   <sitemap>
     <loc>http://www.example.com/pt-br/sitemap.xml</loc>
     
-<<<<<<< HEAD
       <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     
-=======
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
   </sitemap>
   
 </sitemapindex>

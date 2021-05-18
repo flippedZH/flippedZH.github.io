@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-<<<<<<< HEAD
     <title>Authors on flipped</title>
     <link>http://www.example.com/authors/</link>
     <description>Recent content in Authors on flipped</description>
-=======
-    <title>Authors on johndoe</title>
-    <link>http://www.example.com/authors/</link>
-    <description>Recent content in Authors on johndoe</description>
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language><atom:link href="http://www.example.com/authors/index.xml" rel="self" type="application/rss+xml" />
   </channel>

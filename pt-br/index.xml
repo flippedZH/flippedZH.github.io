@@ -5,7 +5,6 @@
     <link>http://www.example.com/pt-br/</link>
     <description>Recent content on João Ninguém</description>
     <generator>Hugo -- gohugo.io</generator>
-<<<<<<< HEAD
     <language>en</language>
     <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://www.example.com/pt-br/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -90,8 +89,5 @@ O Hugo faz o uso de vários projetos de código aberto incluíndo:</description>
       <description>Nada para ver aqui.. Circulando!</description>
     </item>
     
-=======
-    <language>en</language><atom:link href="http://www.example.com/pt-br/index.xml" rel="self" type="application/rss+xml" />
->>>>>>> 480ed16cb2836294cc61fa4e03e83312fc9bc813
   </channel>
 </rss>
