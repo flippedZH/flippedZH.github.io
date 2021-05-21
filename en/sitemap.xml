@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://www.example.com/bloglist/</loc>
-    <lastmod>2021-05-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-21T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -15,11 +15,8 @@
                 href="http://www.example.com/bloglist/"
                 />
   </url><url>
-    <loc>http://www.example.com/blogtest/</loc>
-    <lastmod>2021-05-18T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>http://www.example.com/</loc>
-    <lastmod>2021-05-18T00:00:00+00:00</lastmod>
+    <lastmod>2021-05-21T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
@@ -30,6 +27,12 @@
                 hreflang="en"
                 href="http://www.example.com/"
                 />
+  </url><url>
+    <loc>http://www.example.com/bloglist/mysql-2021521/</loc>
+    <lastmod>2021-05-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>http://www.example.com/blogtest/</loc>
+    <lastmod>2021-05-18T00:00:00+00:00</lastmod>
   </url><url>
     <loc>http://www.example.com/bloglist/blogtest/</loc>
     <lastmod>2021-05-18T00:00:00+00:00</lastmod>
