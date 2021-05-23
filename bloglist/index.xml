@@ -6,7 +6,25 @@
     <description>Recent content in Bloglists on flipped</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 21 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.example.com/bloglist/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://www.example.com/bloglist/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>理解 Class.forName()</title>
+      <link>http://www.example.com/bloglist/javaclass-2021522/</link>
+      <pubDate>Sat, 22 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://www.example.com/bloglist/javaclass-2021522/</guid>
+      <description>转载地址：https://www.runoob.com/w3cnote/java-class-forname.html
+Class 类概念
+Class 也是一个 Java 类，保存的是与之对应 Java 类的 meta信息（元信息），用来描述这个类的结构，比如描述一个类有哪些成员，有哪些方法等，一般在反射中使用。
+**详细解释：**Java 源程序（.java 文件）在经过 Java 编译器编译之后就被转换成 Java 字节代码（.class 文件）。类加载器负责读取 Java 字节代码，并转换成 java.lang.Class类的一个实例（Class 对象）。也就是说，在 Java 中，每个 java 类都有一个相应的 Class 对象，用于表示这个 java 类的类型信息。
+类加载概念
+当使用一个类的时候（比如 new 一个类的实例），会检查此类是否被加载到内存，如果没有，则会执行加载操作。
+读取类对应的 class 文件数据，解析此数据，构造一个此类对应的 Class 类的实例。此时JVM就可以使用该类了，比如实例化此类，或者调用此类的静态方法。
+Java 也提供了手动加载类的接口，class.forName()方法就是其中之一。（说来说去，其实就是生成这个类的 Class）
+类加载器的概念
+顾名思义，类加载器（class loader）用来加载 Java 类到 Java 虚拟机中。一般来说，Java 虚拟机使用 Java 类的方式如下：Java 源程序（.java 文件）在经过 Java 编译器编译之后就被转换成 Java 字节代码（.class 文件）。类加载器负责读取 Java 字节代码，并转换成 java.lang.Class 类的一个实例。每个这样的实例用来表示一个 Java 类。通过此实例的 newInstance() 方法就可以创建出该类的一个对象。 基本上所有的类加载器都是 java.lang.ClassLoader 类的一个实例。</description>
+    </item>
+    
     <item>
       <title>MySQL索引背后的数据结构及算法原理</title>
       <link>http://www.example.com/bloglist/mysql-2021521/</link>

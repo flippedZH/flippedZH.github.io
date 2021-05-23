@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="color-scheme" content="light dark">
+
+    
+      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+    
+
+    <meta name="author" content="flipped">
+    <meta name="description" content="转载地址：https://www.runoob.com/w3cnote/java-class-forname.html
+Class 类概念
+Class 也是一个 Java 类，保存的是与之对应 Java 类的 meta信息（元信息），用来描述这个类的结构，比如描述一个类有哪些成员，有哪些方法等，一般在反射中使用。
+**详细解释：**Java 源程序（.java 文件）在经过 Java 编译器编译之后就被转换成 Java 字节代码（.class 文件）。类加载器负责读取 Java 字节代码，并转换成 java.lang.Class类的一个实例（Class 对象）。也就是说，在 Java 中，每个 java 类都有一个相应的 Class 对象，用于表示这个 java 类的类型信息。
+类加载概念
+当使用一个类的时候（比如 new 一个类的实例），会检查此类是否被加载到内存，如果没有，则会执行加载操作。
+读取类对应的 class 文件数据，解析此数据，构造一个此类对应的 Class 类的实例。此时JVM就可以使用该类了，比如实例化此类，或者调用此类的静态方法。
+Java 也提供了手动加载类的接口，class.forName()方法就是其中之一。（说来说去，其实就是生成这个类的 Class）
+类加载器的概念
+顾名思义，类加载器（class loader）用来加载 Java 类到 Java 虚拟机中。一般来说，Java 虚拟机使用 Java 类的方式如下：Java 源程序（.java 文件）在经过 Java 编译器编译之后就被转换成 Java 字节代码（.class 文件）。类加载器负责读取 Java 字节代码，并转换成 java.lang.Class 类的一个实例。每个这样的实例用来表示一个 Java 类。通过此实例的 newInstance() 方法就可以创建出该类的一个对象。 基本上所有的类加载器都是 java.lang.ClassLoader 类的一个实例。">
+    <meta name="keywords" content="blog,developer,personal">
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="理解 Class.forName()"/>
+<meta name="twitter:description" content="转载地址：https://www.runoob.com/w3cnote/java-class-forname.html
+Class 类概念
+Class 也是一个 Java 类，保存的是与之对应 Java 类的 meta信息（元信息），用来描述这个类的结构，比如描述一个类有哪些成员，有哪些方法等，一般在反射中使用。
+**详细解释：**Java 源程序（.java 文件）在经过 Java 编译器编译之后就被转换成 Java 字节代码（.class 文件）。类加载器负责读取 Java 字节代码，并转换成 java.lang.Class类的一个实例（Class 对象）。也就是说，在 Java 中，每个 java 类都有一个相应的 Class 对象，用于表示这个 java 类的类型信息。
+类加载概念
+当使用一个类的时候（比如 new 一个类的实例），会检查此类是否被加载到内存，如果没有，则会执行加载操作。
+读取类对应的 class 文件数据，解析此数据，构造一个此类对应的 Class 类的实例。此时JVM就可以使用该类了，比如实例化此类，或者调用此类的静态方法。
+Java 也提供了手动加载类的接口，class.forName()方法就是其中之一。（说来说去，其实就是生成这个类的 Class）
+类加载器的概念
+顾名思义，类加载器（class loader）用来加载 Java 类到 Java 虚拟机中。一般来说，Java 虚拟机使用 Java 类的方式如下：Java 源程序（.java 文件）在经过 Java 编译器编译之后就被转换成 Java 字节代码（.class 文件）。类加载器负责读取 Java 字节代码，并转换成 java.lang.Class 类的一个实例。每个这样的实例用来表示一个 Java 类。通过此实例的 newInstance() 方法就可以创建出该类的一个对象。 基本上所有的类加载器都是 java.lang.ClassLoader 类的一个实例。"/>
+
+    <meta property="og:title" content="理解 Class.forName()" />
+<meta property="og:description" content="转载地址：https://www.runoob.com/w3cnote/java-class-forname.html
+Class 类概念
+Class 也是一个 Java 类，保存的是与之对应 Java 类的 meta信息（元信息），用来描述这个类的结构，比如描述一个类有哪些成员，有哪些方法等，一般在反射中使用。
+**详细解释：**Java 源程序（.java 文件）在经过 Java 编译器编译之后就被转换成 Java 字节代码（.class 文件）。类加载器负责读取 Java 字节代码，并转换成 java.lang.Class类的一个实例（Class 对象）。也就是说，在 Java 中，每个 java 类都有一个相应的 Class 对象，用于表示这个 java 类的类型信息。
+类加载概念
+当使用一个类的时候（比如 new 一个类的实例），会检查此类是否被加载到内存，如果没有，则会执行加载操作。
+读取类对应的 class 文件数据，解析此数据，构造一个此类对应的 Class 类的实例。此时JVM就可以使用该类了，比如实例化此类，或者调用此类的静态方法。
+Java 也提供了手动加载类的接口，class.forName()方法就是其中之一。（说来说去，其实就是生成这个类的 Class）
+类加载器的概念
+顾名思义，类加载器（class loader）用来加载 Java 类到 Java 虚拟机中。一般来说，Java 虚拟机使用 Java 类的方式如下：Java 源程序（.java 文件）在经过 Java 编译器编译之后就被转换成 Java 字节代码（.class 文件）。类加载器负责读取 Java 字节代码，并转换成 java.lang.Class 类的一个实例。每个这样的实例用来表示一个 Java 类。通过此实例的 newInstance() 方法就可以创建出该类的一个对象。 基本上所有的类加载器都是 java.lang.ClassLoader 类的一个实例。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.example.com/bloglist/javaclass-2021522/" /><meta property="article:section" content="bloglist" />
+<meta property="article:published_time" content="2021-05-22T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-05-22T00:00:00&#43;00:00" />
+
+
+
+    <title>
+  理解 Class.forName() · flipped
+</title>
+
+    
+      <link rel="canonical" href="http://www.example.com/bloglist/javaclass-2021522/">
+    
+
+    <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+    
+      
+      
+      <link rel="stylesheet" href="/css/coder.min.93c41bf1e522f85ecda7355985f09000f71fc1d64dda9f74051b0fa06210e93f.css" integrity="sha256-k8Qb8eUi&#43;F7NpzVZhfCQAPcfwdZN2p90BRsPoGIQ6T8=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="/css/coder-dark.min.f37febc669ce189201c1918fac1948a254686c8d366a312c2d72b2bb71ad97d1.css" integrity="sha256-83/rxmnOGJIBwZGPrBlIolRobI02ajEsLXKyu3Gtl9E=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+    
+
+    <meta name="generator" content="Hugo 0.83.1" />
+  </head>
+
+  
+  
+    
+  
+  <body class="preload-transitions colorscheme-auto"
+        onload=""
+  >
+    
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      flipped
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/bloglist/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+          
+          
+          
+            
+          
+            
+              
+                <li class="navigation-item menu-separator">
+                  <span>|</span>
+                </li>
+                
+              
+              <li class="navigation-item">
+                <a href="http://www.example.com/pt-br/">🇧🇷</a>
+              </li>
+            
+          
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://www.example.com/bloglist/javaclass-2021522/">
+              理解 Class.forName()
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime='2021-05-22T00:00:00Z'>
+                May 22, 2021
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <p><strong>转载地址：https://www.runoob.com/w3cnote/java-class-forname.html</strong></p>
+<p><strong>Class 类概念</strong></p>
+<p>Class 也是一个 Java 类，保存的是与之对应 Java 类的 meta信息（元信息），用来描述这个类的结构，比如描述一个类有哪些成员，有哪些方法等，一般在反射中使用。</p>
+<p>**详细解释：**Java 源程序（.java 文件）在经过 Java 编译器编译之后就被转换成 Java 字节代码（.class 文件）。类加载器负责读取 Java 字节代码，并转换成 java.lang.Class类的一个实例（Class 对象）。也就是说，在 Java 中，每个 java 类都有一个相应的 Class 对象，用于表示这个 java 类的类型信息。</p>
+<p><strong>类加载概念</strong></p>
+<p>当使用一个类的时候（比如 new 一个类的实例），会检查此类是否被加载到内存，如果没有，则会执行加载操作。</p>
+<p>读取类对应的 class 文件数据，解析此数据，构造一个此类对应的 Class 类的实例。此时JVM就可以使用该类了，比如实例化此类，或者调用此类的静态方法。</p>
+<p>Java 也提供了手动加载类的接口，class.forName()方法就是其中之一。（说来说去，其实就是生成这个类的 Class）</p>
+<p><strong>类加载器的概念</strong></p>
+<p>顾名思义，类加载器（class loader）用来加载 Java 类到 Java 虚拟机中。一般来说，Java 虚拟机使用 Java 类的方式如下：Java 源程序（.java 文件）在经过 Java 编译器编译之后就被转换成 Java 字节代码（.class 文件）。类加载器负责读取 Java 字节代码，并转换成 java.lang.Class 类的一个实例。每个这样的实例用来表示一个 Java 类。通过此实例的 newInstance() 方法就可以创建出该类的一个对象。 基本上所有的类加载器都是 java.lang.ClassLoader 类的一个实例。</p>
+<p><strong>类初始化概念</strong></p>
+<p>类被加载之后，jvm 已经获得了一个描述类结构的 Class 实例。但是还需要进行类初始化操作之后才能正常使用此类，类初始化操作就是执行一遍类的静态语句，包括静态变量的声明还有静态代码块。</p>
+<p><strong>Class.forName() 方法</strong></p>
+<p>此方法含义是：加载参数指定的类，并且初始化它。</p>
+<p>在 jdbc 连接数据库中的应用</p>
+<p>到这里，不用解释，读者也会明白，在使用 jdbc 方式连接数据库时，为什么要执行 <strong>Class.forName(&lsquo;驱动类名&rsquo;)</strong> 方法了：将驱动类的 class 文件装载到内存中，并且形成一个描述此驱动类结构的 Class 类实例，并且初始化此驱动类，这样 jvm 就可以使用它了，这就是 Class.forName() 方法的含义。</p>
+<p>有数据库开发经验朋友会发现，为什么在我们加载数据库驱动包的时候有的却没有调用 newInstance() 方法呢？即有的 jdbc 连接数据库的写法里是 Class.forName(xxx.xx.xx);而有一 些：Class.forName(xxx.xx.xx).newInstance()，为什么会有这两种写法呢？</p>
+<p>刚才提到，<strong>Class.forName(&quot;&quot;);</strong> 的作用是要求 JVM 查找并加载指定的类，如果在类中有静态初始化器的话，JVM 必然会执行该类的静态代码 段。而在 JDBC 规范中明确要求这个 Driver 类必须向 DriverManager 注册自己，即任何一个 JDBC Driver 的 Driver 类的代码都必须类似如下：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">MyJDBCDriver</span> <span style="font-weight:bold">implements</span> Driver { 
+    <span style="font-weight:bold">static</span> { 
+        DriverManager.registerDriver(<span style="font-weight:bold">new</span> MyJDBCDriver()); 
+    } 
+} 
+</code></pre></div><p>既然在静态初始化器的中已经进行了注册，所以我们在使用 JDBC 时只需要 <strong>Class.forName(XXX.XXX);</strong> 就可以了。</p>
+<h2 id="classforname-与-xxxclass的区别">
+  Class.forName() 与 xxx.class的区别
+  <a class="heading-link" href="#classforname-%e4%b8%8e-xxxclass%e7%9a%84%e5%8c%ba%e5%88%ab">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>所有的类都是在对其第一次使用时，动态加载到 JVM。当程序创建第一个对类的静态成员的引用时，就会加载这个类。这也证明了构造器也是类的静态方法，即使在构造器之前并没有 static 关键字。因此，使用 new 操作符创建类的对象也会被当作对类的静态成员的引用。</p>
+<p>因此 Java 程序在他开始运行之前并非被完全加载，其各个部分是在需要时才加载的。</p>
+<p>类加载器首先槛车这个类的 Class 对象是否已经加载。如果尚未加载，默认的类加载器就会根据类名称查找 .class 文件。在这个类的字节码被加载时，它们会接收验证，以确保其没有被破坏。</p>
+<p>Class 对象尽在需要的时候才被加载。static 初始化是在类加载时进行的。</p>
+<p>对于 <strong>Class.forName()</strong>，这个方法是 Class 类的一个 static 成员。Class 对象就和其他对象一样，我们可以获取并操作他的引用。forName() 是取得 Class 对象引用的一种方法。他是用一个包含目标类的文本名的 String 作为输入参数，返回一个 Class 对象的引用。forName() 方法发现某个累还没被加载，就会主动去加载这个类，在加载过程中，该类的是 static 子句将会被执行。</p>
+<p>Java 还提供了另一种方法来生成对 Class 对象的引用，即使用类字面常量。形如：xxx.class 的形式。但是这种形式创建 Class 对象引用时，不会自动初始化 Class 对象。初始化被延迟到了对静态方法或者非常数静态域首次引用时才执行。</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">public class Initable {  
+    static final int staticFinal = 47;  
+    static final int staticFianl2 = ClassInitialization.rand.nextInt(1000);  
+    static {  
+        System.out.println(&#34;Initializing Initable&#34;);  
+    }  
+}
+public class Initable2 {  
+    static int staticNonFinal = 147;  
+    static {  
+        System.out.println(&#34;Initializing Initable2&#34;);  
+    }  
+}
+public class Initable3 {  
+    static int staticNonFinal = 74;  
+    static {  
+        System.out.println(&#34;Initializing Initable3&#34;);  
+    }  
+}
+public class ClassInitialization {  
+    public static Random rand = new Random(47);  
+    public static void main(String[] args) throws ClassNotFoundException {  
+        Class initable = Initable.class;  
+        System.out.println(&#34;after creating Initable ref&#34;);  
+        //Does not trigger initialization  
+        System.out.println(Initable.staticFinal);  
+        //Does trigger initialization  
+        System.out.println(Initable.staticFianl2);  
+        //Does trigger initialization  
+        System.out.println(Initable2.staticNonFinal);  
+        Class initable3 = Class.forName(&#34;chapter13.t2.Initable3&#34;);  
+        System.out.println(&#34;after creating Initable3 ref&#34;);  
+        System.out.println(Initable3.staticNonFinal);  
+    }  
+}
+</code></pre></div><p>执行输出结果：</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">after creating Initable ref  
+47  
+Initializing Initable  
+258  
+Initializing Initable2  
+147  
+Initializing Initable3  
+after creating Initable3 ref  
+74  
+</code></pre></div><p>从对 initable 引用的创建中可以看到，仅使用 .class 语法来获取对类的引用不会发生初始化。但是 Class.forName() 立即就进行了初始化。如果一个 static final 值是“编译期常量”，就像 Initable.staticFinal 那样，那么这个值不需要对 Initable 类进行初始化就可以被读取。但是如果只是将一个域设置为 static 和 final 的，还不足以确保这种行为，例如 Initable.staticFianl2 的访问将强制进行类型的初始化，因为他不是一个编译器常量。</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+          2019 -
+        
+        2021
+         flipped 
+      
+      
+         · 
+        Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+      
+      
+        
+      
+    </section>
+  </footer>
+
+
+    </main>
+
+    
+      
+      <script src="/js/coder.min.235666b114443867d43eeb5799d51f6252965e5163f338285e113fa381d3d27e.js" integrity="sha256-I1ZmsRREOGfUPutXmdUfYlKWXlFj8zgoXhE/o4HT0n4="></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+  </body>
+
+</html>
